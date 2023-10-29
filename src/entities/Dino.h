@@ -14,7 +14,7 @@ public:
   void Load();
   void Unload();
 
-  void Update(const float &GRAVITY);
+  void Update(const float& GRAVITY);
   void Draw();
 };
 

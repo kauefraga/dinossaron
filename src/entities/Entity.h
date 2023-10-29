@@ -11,4 +11,3 @@ public:
   float velocity_y;
   Texture sprite;
 };
-

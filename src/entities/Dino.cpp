@@ -13,7 +13,7 @@ void Dino::Unload() {
   UnloadTexture(sprite);
 }
 
-void Dino::Update(const float &GRAVITY) {
+void Dino::Update(const float& GRAVITY) {
   velocity_y += GRAVITY * GetFrameTime();
   y += velocity_y;
 
