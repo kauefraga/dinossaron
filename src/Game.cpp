@@ -17,14 +17,17 @@ void Game::InitializeWindow() {
 }
 
 void Game::LoadResources() {
+  dino.Load();
 }
 
 void Game::UnloadAndClose() {
+  dino.Unload();
+
   CloseWindow();
 }
 
 void Game::Update() {
-
+  dino.Update(GRAVITY);
 }
 
 void Game::Render() {
@@ -34,10 +37,12 @@ void Game::Render() {
   DrawText(
     "Dinossaron",
     GetScreenWidth() / 2 - MeasureText("Dinossaron", 80) / 2,
-    GetScreenHeight() / 4,
+    GetScreenHeight() / 5,
     80,
     BLACK
   );
+
+  dino.Draw();
 
   EndDrawing();
 }
