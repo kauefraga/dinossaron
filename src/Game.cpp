@@ -17,32 +17,25 @@ void Game::InitializeWindow() {
 }
 
 void Game::LoadResources() {
-  dino.Load();
+  currentScene = 0;
+  gameplayScene.Load();
 }
 
 void Game::UnloadAndClose() {
-  dino.Unload();
+  gameplayScene.Unload();
 
   CloseWindow();
 }
 
 void Game::Update() {
-  dino.Update(GRAVITY);
+  gameplayScene.Update(GRAVITY);
 }
 
 void Game::Render() {
   BeginDrawing();
-  ClearBackground(RAYWHITE);
+  ClearBackground(WHITE);
 
-  DrawText(
-    "Dinossaron",
-    GetScreenWidth() / 2 - MeasureText("Dinossaron", 80) / 2,
-    GetScreenHeight() / 5,
-    80,
-    BLACK
-  );
-
-  dino.Draw();
+  if (currentScene == 0) gameplayScene.Render();
 
   EndDrawing();
 }
