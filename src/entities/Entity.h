@@ -5,9 +5,10 @@
 
 class Entity {
 public:
-  float x;
-  float y;
+  int width;
+  int height;
   float velocity_x;
   float velocity_y;
-  Texture sprite;
+  Rectangle source;
+  Rectangle destination;
 };

@@ -6,10 +6,10 @@
 
 class Dino : public Entity {
 private:
-  const int WIDTH = 50;
-  const int HEIGHT = 50;
-  const float JUMP_FORCE = 8.0f;
+  const float JUMP_FORCE = 4.0f;
   bool isOnFloor;
+
+  Texture sprite;
 public:
   void Load();
   void Unload();
