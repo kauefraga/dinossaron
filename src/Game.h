@@ -1,6 +1,7 @@
 #pragma once
 
 #include <raylib.h>
+#include "scenes/Start.h"
 #include "scenes/Gameplay.h"
 
 
@@ -10,7 +11,9 @@ private:
   const int SCREEN_HEIGHT = 720;
   const float GRAVITY = 9.8f;
 
-  int currentScene; // START = 0, GAMEPLAY, MENU 
+  // START = 0, CREDITS, GAMEPLAY, GAMEOVER, SETTINGS, MENU
+  int currentScene;
+  Start startScene;
   Gameplay gameplayScene;
 public:
   Game();

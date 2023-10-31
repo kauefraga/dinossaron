@@ -18,16 +18,19 @@ void Game::InitializeWindow() {
 
 void Game::LoadResources() {
   currentScene = 0;
+  startScene.Load();
   gameplayScene.Load();
 }
 
 void Game::UnloadAndClose() {
+  startScene.Unload();
   gameplayScene.Unload();
 
   CloseWindow();
 }
 
 void Game::Update() {
+  startScene.Update(currentScene);
   gameplayScene.Update(GRAVITY);
 }
 
@@ -35,7 +38,9 @@ void Game::Render() {
   BeginDrawing();
   ClearBackground(WHITE);
 
-  if (currentScene == 0) gameplayScene.Render();
+  if (currentScene == 0) startScene.Render();
+
+  if (currentScene == 2) gameplayScene.Render();
 
   EndDrawing();
 }
