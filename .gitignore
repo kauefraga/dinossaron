@@ -6,3 +6,6 @@ bin
 
 # Visual Studio cache/options 
 .vs
+
+# Assets project files
+resources/.ase
