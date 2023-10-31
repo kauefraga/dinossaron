@@ -8,6 +8,7 @@ Game::Game() {
 
 void Game::InitializeWindow() {
   InitWindow(Game::SCREEN_WIDTH, Game::SCREEN_HEIGHT, "Dinossaron");
+  InitAudioDevice();
   SetExitKey(KEY_NULL);
   SetTargetFPS(120);
 
@@ -26,6 +27,7 @@ void Game::UnloadAndClose() {
   startScene.Unload();
   gameplayScene.Unload();
 
+  CloseAudioDevice();
   CloseWindow();
 }
 
