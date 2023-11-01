@@ -31,9 +31,7 @@ void Start::Unload() {
   credits.Unload();
 }
 
-void Start::Update(int& currentScene) {
-  mousePosition = GetMousePosition();
-
+void Start::Update(int& currentScene, Vector2& mousePosition) {
   play.Update(mousePosition);
   settings.Update(mousePosition);
   credits.Update(mousePosition);

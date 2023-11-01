@@ -4,11 +4,9 @@
 #include "ui/Button.h"
 
 
-class Start {
+class Credits {
 private:
-  Button play;
-  Button settings;
-  Button credits;
+  Button back;
 public:
   void Load();
   void Unload();

@@ -20,11 +20,13 @@ void Game::InitializeWindow() {
 void Game::LoadResources() {
   currentScene = 0;
   startScene.Load();
+  creditsScene.Load();
   gameplayScene.Load();
 }
 
 void Game::UnloadAndClose() {
   startScene.Unload();
+  creditsScene.Unload();
   gameplayScene.Unload();
 
   CloseAudioDevice();
@@ -32,8 +34,11 @@ void Game::UnloadAndClose() {
 }
 
 void Game::Update() {
-  startScene.Update(currentScene);
-  gameplayScene.Update(GRAVITY);
+  mousePosition = GetMousePosition();
+
+  if (currentScene == 0) startScene.Update(currentScene, mousePosition);
+  if (currentScene == 1) creditsScene.Update(currentScene, mousePosition);
+  if (currentScene == 2) gameplayScene.Update(GRAVITY);
 }
 
 void Game::Render() {
@@ -41,7 +46,7 @@ void Game::Render() {
   ClearBackground(WHITE);
 
   if (currentScene == 0) startScene.Render();
-
+  if (currentScene == 1) creditsScene.Render();
   if (currentScene == 2) gameplayScene.Render();
 
   EndDrawing();
