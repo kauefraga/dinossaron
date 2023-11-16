@@ -1,15 +1,12 @@
 #pragma once
 
 #include <raylib.h>
-#include "objects/Sun.h" 
+#include "Object.h"
 
 
-class Background {
+class Sun : public Object {
 private:
-  Texture background;
-  Vector2 offset;
-
-  Sun sun;
+  Texture sprite;
 public:
   void Load();
   void Unload();
