@@ -4,6 +4,7 @@
 #include "scenes/Start.h"
 #include "scenes/Credits.h"
 #include "scenes/Gameplay.h"
+#include "scenes/Settings.h"
 
 
 class Game {
@@ -14,11 +15,12 @@ private:
 
   Vector2 mousePosition;
 
-  // START = 0, CREDITS, GAMEPLAY, GAMEOVER, SETTINGS, MENU
+  // START = 0, CREDITS, GAMEPLAY, SETTINGS, MENU
   int currentScene;
   Start startScene;
   Credits creditsScene;
   Gameplay gameplayScene;
+  Settings settingsScene;
 public:
   Game();
 

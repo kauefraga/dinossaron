@@ -43,7 +43,7 @@ void Start::Update(int& currentScene, Vector2& mousePosition) {
 
   if (settings.IsPressed()) {
     settings.PlayConfirmationSound();
-    currentScene = 4;
+    currentScene = 3;
   }
 
   if (credits.IsPressed()) {
